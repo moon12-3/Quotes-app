@@ -1,9 +1,11 @@
 package com.example.todayquote
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import java.util.*
 
@@ -36,9 +38,18 @@ class QuoteMainActivity : AppCompatActivity() {
         pref = getSharedPreferences("quotes", Context.MODE_PRIVATE)
         initializeQuotes()
 
-        // 명언과 출처 뷰
+        // 명언과 출처 텍스트 뷰
         var quoteText = findViewById<TextView>(R.id.quote_text)
         val quoteFrom = findViewById<TextView>(R.id.quote_from)
+        // 명언 보기 버튼 뷰
+        val toQuoteListButton = findViewById<Button>(R.id.quote_list_btn)
+
+        toQuoteListButton.setOnClickListener {
+            val intent = Intent(this, QuoteListActivity::class.java)
+
+            intent.putExtra("quote_size", quotes.size)
+            startActivity(intent)
+        }
 
         quotes = Quote.getQuotesFromPreferences(pref)
 
@@ -52,5 +63,6 @@ class QuoteMainActivity : AppCompatActivity() {
             quoteText.text = "저장된 명언이 없습니다."
             quoteFrom.text = ""
         }
+
     }
 }
