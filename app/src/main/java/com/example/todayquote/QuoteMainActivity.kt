@@ -43,11 +43,18 @@ class QuoteMainActivity : AppCompatActivity() {
         val quoteFrom = findViewById<TextView>(R.id.quote_from)
         // 명언 보기 버튼 뷰
         val toQuoteListButton = findViewById<Button>(R.id.quote_list_btn)
+        // 명언 수정 버튼 뷰
+        val toQuoteEditButton = findViewById<Button>(R.id.quote_edit_btn)
 
         toQuoteListButton.setOnClickListener {
             val intent = Intent(this, QuoteListActivity::class.java)
 
             intent.putExtra("quote_size", quotes.size)
+            startActivity(intent)
+        }
+
+        toQuoteEditButton.setOnClickListener {
+            val intent = Intent(this, QuoteEditActivity::class.java)
             startActivity(intent)
         }
 

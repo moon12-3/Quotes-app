@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_margin="10dp">
 
     <TextView
         android:id="@+id/quote_text"
@@ -10,6 +11,7 @@
         android:layout_height="wrap_content"
         android:textColor="#333333"
         android:textSize="24sp"
+        android:layout_margin="10dp"
         android:gravity="center"/>
 
     <TextView
