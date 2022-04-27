@@ -21,4 +21,22 @@
         android:textSize="18sp"
         android:gravity="right"/>
 
+    <Button
+        android:id="@+id/quote_share_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#007bff"
+        android:textColor="#FFF"
+        android:text="명언 공유"
+        />
+
+    <Button
+        android:id="@+id/quote_from_search_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#28a745"
+        android:textColor="#FFF"
+        android:text="출처 검색"
+        />
+
 </LinearLayout>
